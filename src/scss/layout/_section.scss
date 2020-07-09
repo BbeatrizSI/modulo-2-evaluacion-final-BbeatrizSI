@@ -4,4 +4,24 @@
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 3;
+  display: flex;
+  flex-wrap: wrap;
+
+  .cardShow {
+    border: 1px solid blue;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+
+    img {
+      height: 295px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+  }
 }
