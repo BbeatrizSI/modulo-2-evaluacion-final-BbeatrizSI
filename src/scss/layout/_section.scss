@@ -1,27 +1,35 @@
 .search-section {
-  border: 1px solid blue;
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  border: 1px solid rgb(255, 145, 0);
+  flex-grow: 0;
   display: flex;
   flex-wrap: wrap;
 
   .cardShow {
-    border: 1px solid blue;
-    width: 300px;
+    width: 260px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 5px;
+    padding: 5px;
+    background-color: rgb(235, 205, 215);
 
     img {
       height: 295px;
+      margin-top: 10px;
     }
 
     h2 {
       font-size: 18px;
+      margin: 15px 0 10px;
+      color: rgb(168, 14, 14);
+      font-weight: 700;
+    }
+  }
+  .cardShow-selected {
+    background-color: rgb(168, 14, 14);
+    h2 {
+      color: rgb(235, 205, 215);
     }
   }
 }

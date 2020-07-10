@@ -1,16 +1,22 @@
 .page {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .main {
   position: relative;
-  height: fit-content;
-  display: grid;
+  height: auto;
+  display: flex;
   width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  border: 1px solid red;
+  flex-grow: 1;
+
+  border: 1px solid rgb(100, 100, 100);
+
+  .container-left {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
 }
