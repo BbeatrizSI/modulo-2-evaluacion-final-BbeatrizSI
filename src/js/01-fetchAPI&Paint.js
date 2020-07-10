@@ -50,19 +50,18 @@ function paintShowCards() {
       function addToFavorite(ev) {
         ev.currentTarget.classList.toggle('cardShow-selected');
 
-        for (let i = 0; i < searchedShows.length; i++) {
-          favoriteShows = searchedShows.filter((show) =>
-            show.classList.contains('cardShow-selected')
-          );
-          favoriteSection.innerHTML(favoriteShows[i]);
-        }
+        // for (let i = 0; i < searchedShows.length; i++) {
+        //   favoriteShows = searchedShows.filter((show) =>
+        //     show.classList.contains('cardShow-selected')
+        //   );
+        //   favoriteSection.innerHTML(favoriteShows[i]);
+        // }
       }
 
-      // console.log(favoriteShows);
-      // favoriteSection.innerHTML(favoriteShows);
+      const showCard = document.querySelectorAll('.js-cardShow');
 
       for (let i = 0; i < searchedShows.length; i++) {
-        // divShow[i].outerHTML.addEventListener('click', addToFavorite);
+        showCard[i].addEventListener('click', addToFavorite);
       }
     });
 }
