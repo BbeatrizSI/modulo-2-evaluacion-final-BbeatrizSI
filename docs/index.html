@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buscador de series</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="icon" href="./assets/images/movies.png" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <h1>Buscador de series</h1>
+      </header>
+
+      <main class="main">
+        <div class="container-left">
+          <nav class="nav">
+            <form action="">
+              <input
+                type="text"
+                name="tv_shows"
+                id="tv_shows"
+                class="search-input js-search-input"
+                placeholder="¿Qué serie quieres buscar?"
+              />
+              <button
+                id="search-button"
+                class="search-button js-search-button"
+                type="button"
+              >
+                Search
+              </button>
+            </form>
+          </nav>
+          <aside class="favorite-section js-favorite-section">
+            <ul class="js-favoriteShows-section"></ul>
+            <div class="deleteAllBtnContainer js-deleteAllBtnContainer"></div>
+          </aside>
+        </div>
+        <section class="search-section js-search-section"></section>
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy; BbeatrizSI, Powered by
+          <a class="link" href="https://adalab.es/" target="_blank">Adalab</a>
+        </small>
+      </footer>
+
+    </div>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
