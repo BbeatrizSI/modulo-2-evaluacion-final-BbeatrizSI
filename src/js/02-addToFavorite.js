@@ -29,18 +29,17 @@ function addToFavorite(ev) {
 function paintFavoriteShows() {
   let codeHTML = '';
   for (let i = 0; i < favoriteShows.length; i++) {
-    codeHTML += `<div class="favorite-cardShow js-favCardShow" data-id="${favoriteShows[i].idShow}">`;
+    codeHTML += `<li><div class="favorite-cardShow js-favCardShow" data-id="${favoriteShows[i].idShow}">`;
     codeHTML += `<div class="container-favleft"><img src="${favoriteShows[i].imgShow}" alt="Portada de ${favoriteShows[i].titleShow}" />`;
     codeHTML += `<h3>${favoriteShows[i].titleShow}</h3></div>`;
     codeHTML += `<span class="delete-favorite js-deleteFav">X</span>`;
-    codeHTML += `</div>`;
+    codeHTML += `</div></li>`;
   }
   favoriteSection.innerHTML = codeHTML;
 }
 
 function listenCardShowsClicks() {
   cardShows = document.querySelectorAll('.js-cardShow');
-
   for (let i = 0; i < shows.length; i++) {
     cardShows[i].addEventListener('click', addToFavorite);
   }
