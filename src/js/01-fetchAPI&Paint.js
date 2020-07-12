@@ -12,6 +12,7 @@ let favoriteShows = [];
 let shows = [];
 let cardShows = [];
 
+getFromLocalStorage();
 //Recibir info de la API y generar un array de objetos con el id, imagen y título de las series buscadas
 
 function getSearchedInfo() {

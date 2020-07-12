@@ -22,6 +22,7 @@ function addToFavorite(ev) {
   }
 
   paintFavoriteShows();
+  storeFavorites();
 }
 
 //pintar las favoritas en su sección
