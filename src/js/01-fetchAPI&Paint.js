@@ -14,6 +14,8 @@ let searchedShows = [];
 let favoriteShows = [];
 let shows = [];
 let cardShows = [];
+let favCardShows = [];
+let xDeleteFav = [];
 
 //recuperar del LocalStorage la info almacenada
 

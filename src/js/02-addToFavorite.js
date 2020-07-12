@@ -34,10 +34,14 @@ function paintFavoriteShows() {
     codeHTML += `<li><div class="favorite-cardShow js-favCardShow" data-id="${favoriteShows[i].idShow}">`;
     codeHTML += `<div class="container-favleft"><img src="${favoriteShows[i].imgShow}" alt="Portada de ${favoriteShows[i].titleShow}" />`;
     codeHTML += `<h3>${favoriteShows[i].titleShow}</h3></div>`;
-    codeHTML += `<span class="delete-favorite js-deleteFav">X</span>`;
+    codeHTML += `<span class="delete-favorite js-deleteFav" data-id="${favoriteShows[i].idShow}">X</span>`;
     codeHTML += `</div></li>`;
   }
   favoriteListSection.innerHTML = codeHTML;
+
+  // habilitar las "X" en cuanto se pinten
+
+  listenXClicks();
 
   //si existe algún elemento en favoritos y el contenedor del botón de reset está vacío, generar botón de reset
 
