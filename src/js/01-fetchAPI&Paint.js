@@ -4,8 +4,11 @@
 
 const searchBtn = document.querySelector('.js-search-button');
 const searchInput = document.querySelector('.js-search-input');
-const favoriteSection = document.querySelector('.js-favoriteShows-section');
+const favoriteListSection = document.querySelector('.js-favoriteShows-section');
 const searchSection = document.querySelector('.js-search-section');
+const containerDeleteAllBtn = document.querySelector(
+  '.js-deleteAllBtnContainer'
+);
 
 let searchedShows = [];
 let favoriteShows = [];

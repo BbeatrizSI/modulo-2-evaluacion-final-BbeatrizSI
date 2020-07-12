@@ -22,6 +22,7 @@ function addToFavorite(ev) {
   }
 
   paintFavoriteShows();
+
   storeFavorites();
 }
 
@@ -36,7 +37,13 @@ function paintFavoriteShows() {
     codeHTML += `<span class="delete-favorite js-deleteFav">X</span>`;
     codeHTML += `</div></li>`;
   }
-  favoriteSection.innerHTML = codeHTML;
+  favoriteListSection.innerHTML = codeHTML;
+
+  //si existe algún elemento en favoritos y el contenedor del botón de reset está vacío, generar botón de reset
+
+  if (favoriteShows.length > 0 && containerDeleteAllBtn.innerHTML === '') {
+    createDeleteBtn();
+  }
 }
 
 function listenCardShowsClicks() {
