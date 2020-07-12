@@ -1,8 +1,20 @@
 .nav {
-  border: 1px solid blue;
   top: 0;
   height: 70px;
 
   .search-input {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .search-button {
+    width: 100%;
+    border-radius: 10px;
+    background-color: $color-primary-light;
+    color: $color-primary;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
   }
 }

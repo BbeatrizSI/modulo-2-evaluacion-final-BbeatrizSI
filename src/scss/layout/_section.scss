@@ -1,8 +1,8 @@
 .search-section {
-  border: 1px solid rgb(255, 145, 0);
   flex-grow: 0;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 20px;
 
   .cardShow {
     width: 260px;
@@ -11,27 +11,29 @@
     justify-content: center;
     align-items: center;
     margin: 5px;
-    padding: 5px;
-    background-color: rgb(235, 205, 215);
+    padding: 10px;
+    border-radius: 5%;
+    background-color: $color-primary-light;
     cursor: pointer;
 
     img {
       height: 295px;
       margin-top: 10px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 20px;
       margin: 15px 0 10px;
-      color: rgb(168, 14, 14);
+      color: $color-primary;
+      text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
       font-weight: 700;
     }
   }
   .cardShow-selected {
-    background-color: rgb(168, 14, 14);
-
+    background-color: $color-primary;
     h2 {
-      color: rgb(235, 205, 215);
+      color: $color-primary-light;
     }
   }
 }
