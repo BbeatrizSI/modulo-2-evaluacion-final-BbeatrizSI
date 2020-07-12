@@ -4,7 +4,7 @@
 
 const searchBtn = document.querySelector('.js-search-button');
 const searchInput = document.querySelector('.js-search-input');
-const favoriteSection = document.querySelector('.js-favorite-section');
+const favoriteSection = document.querySelector('.js-favoriteShows-section');
 const searchSection = document.querySelector('.js-search-section');
 
 let searchedShows = [];
@@ -38,15 +38,28 @@ function getSearchedInfo() {
     });
 }
 
-//Pintar las tarjetas en la sección de elementos buscados
+//Pintar las tarjetas en la sección de elementos buscados. Si el id del elemento buscado existe en favoritos, le aplica la clase de seleccionado.
 
 function paintShows() {
   let codeHTML = '';
+
   for (let i = 0; i < shows.length; i++) {
-    codeHTML += `<div class="cardShow js-cardShow" data-id="${shows[i].idShow}">`;
-    codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
-    codeHTML += `<h2>${shows[i].titleShow}</h2>`;
-    codeHTML += `</div>`;
+    const numberId = shows[i].idShow;
+    let indexFavorite = favoriteShows
+      .map((show) => show.idShow)
+      .indexOf(numberId);
+
+    if (indexFavorite !== -1) {
+      codeHTML += `<div class="cardShow js-cardShow cardShow-selected" data-id="${shows[i].idShow}">`;
+      codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
+      codeHTML += `<h2>${shows[i].titleShow}</h2>`;
+      codeHTML += `</div>`;
+    } else {
+      codeHTML += `<div class="cardShow js-cardShow" data-id="${shows[i].idShow}">`;
+      codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
+      codeHTML += `<h2>${shows[i].titleShow}</h2>`;
+      codeHTML += `</div>`;
+    }
   }
   searchSection.innerHTML = codeHTML;
   listenCardShowsClicks();
