@@ -1,5 +1,7 @@
 'use strict';
 
+//marcar una serie como favorita añadiéndole la clase y metiéndola en el array de favoritas si no está previamente (si ya está, la borra)
+
 function addToFavorite(ev) {
   ev.currentTarget.classList.toggle('cardShow-selected');
 
@@ -7,26 +9,33 @@ function addToFavorite(ev) {
     const numberId = parseInt(cardShows[i].dataset.id);
     let indexShows = shows.map((show) => show.idShow).indexOf(numberId);
     let indexFavorite = favoriteShows
-
       .map((show) => show.idShow)
       .indexOf(numberId);
-    console.log(numberId);
-    console.log(indexShows);
-    console.log(indexFavorite);
+
     if (cardShows[i].classList.contains('cardShow-selected')) {
-      console.log('Esto es que tiene la clase');
       if (indexFavorite === -1) {
-        console.log('Esto es que tiene la clase y no existe en favoritos');
         favoriteShows.push(shows[indexShows]);
-        console.log(shows[indexShows]);
-      } else {
-        console.log('No sé qué pasa');
       }
-    } else {
+    } else if (indexFavorite !== -1) {
       favoriteShows.splice(indexFavorite, 1);
-      console.log('Esto es que NO tiene la clase');
     }
   }
+
+  paintFavoriteShows();
+}
+
+//pintar las favoritas en su sección
+
+function paintFavoriteShows() {
+  let codeHTML = '';
+  for (let i = 0; i < favoriteShows.length; i++) {
+    codeHTML += `<div class="favorite-cardShow js-favCardShow" data-id="${favoriteShows[i].idShow}">`;
+    codeHTML += `<div class="container-favleft"><img src="${favoriteShows[i].imgShow}" alt="Portada de ${favoriteShows[i].titleShow}" />`;
+    codeHTML += `<h3>${favoriteShows[i].titleShow}</h3></div>`;
+    codeHTML += `<span class="delete-favorite js-deleteFav">X</span>`;
+    codeHTML += `</div>`;
+  }
+  favoriteSection.innerHTML = codeHTML;
 }
 
 function listenCardShowsClicks() {
