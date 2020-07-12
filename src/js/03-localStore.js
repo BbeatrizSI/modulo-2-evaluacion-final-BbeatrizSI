@@ -1,5 +1,7 @@
 'use strict';
 
+/* LOCAL STORAGE */
+
 //almacenar el array de favoritos en el localStorage cada vez que se añade o elimina un elemento.
 
 function storeFavorites() {

@@ -1,5 +1,7 @@
 'use strict';
 
+/* BOTÓN DE CLEAR Y "X" DE CADA SERIE FAVORITA */
+
 // crear botón de limpiar favoritos cuando la sección de favoritos tiene contenido
 
 function createDeleteBtn() {
@@ -7,6 +9,8 @@ function createDeleteBtn() {
     '<button id="delete-fav-button" class="delete-fav-button js-deleteAllFav" type="button">Clear</button>';
   containerDeleteAllBtn.innerHTML = codeHTML;
 }
+
+// función para borrar todos los favoritos, tanto del local storage como del array de favoritos. También quita la clase de seleccionado a todo y vacía el aside donde se pintan.
 
 function clearAllFavorites() {
   localStorage.removeItem('favoriteList');
@@ -22,7 +26,7 @@ if (favoriteShows.length > 0) {
   deleteAllBtn.addEventListener('click', clearAllFavorites);
 }
 
-// habilitar las "X" para que eliminen del array de favoritos y del LocalStorage
+// habilitar las "X" para que eliminen del array de favoritos y del LocalStorage una a una las series. También desaparecen del array y se le quita la clase de seleccionada.
 
 favCardShows = document.querySelectorAll('.js-favCardShow');
 
@@ -35,7 +39,9 @@ function clearOneFav(ev) {
 
   if (indexFavorite !== -1) {
     favoriteShows.splice(indexFavorite, 1);
-    cardShows[indexShow].classList.remove('cardShow-selected');
+    if (cardShows[indexShow]) {
+      cardShows[indexShow].classList.remove('cardShow-selected');
+    }
     storeFavorites();
     paintFavoriteShows();
   }

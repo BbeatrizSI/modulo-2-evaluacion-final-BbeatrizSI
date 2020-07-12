@@ -1,5 +1,7 @@
 'use strict';
 
+/* PETICIÓN AL SERVIDOR Y PINTADO DE SHOWS */
+
 // Selectores Botón, Input, Sección de búsqueda y Sección de favoritos. Variables para Shows encontrados y para favoritos.
 
 const searchBtn = document.querySelector('.js-search-button');

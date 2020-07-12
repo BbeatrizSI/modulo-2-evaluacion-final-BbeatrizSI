@@ -1,5 +1,7 @@
 'use strict';
 
+/* GESTIÓN DE FAVORITOS */
+
 //marcar una serie como favorita añadiéndole la clase y metiéndola en el array de favoritas si no está previamente (si ya está, la borra)
 
 function addToFavorite(ev) {
@@ -43,7 +45,7 @@ function paintFavoriteShows() {
 
   listenXClicks();
 
-  //si existe algún elemento en favoritos y el contenedor del botón de reset está vacío, generar botón de reset
+  //si existe algún elemento en el array de favoritos y el contenedor del botón de reset está vacío, generar botón de reset
 
   if (favoriteShows.length > 0 && containerDeleteAllBtn.innerHTML === '') {
     createDeleteBtn();
