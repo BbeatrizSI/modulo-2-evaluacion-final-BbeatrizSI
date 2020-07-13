@@ -11,6 +11,7 @@ const searchSection = document.querySelector('.js-search-section');
 const containerDeleteAllBtn = document.querySelector(
   '.js-deleteAllBtnContainer'
 );
+const form = document.querySelector('.js-form');
 
 let searchedShows = [];
 let favoriteShows = [];
@@ -25,7 +26,8 @@ getFromLocalStorage();
 
 //Recibir info de la API y generar un array de objetos con el id, imagen y título de las series buscadas
 
-function getSearchedInfo() {
+function getSearchedInfo(ev) {
+  ev.preventDefault();
   fetch(`http://api.tvmaze.com/search/shows?q=${searchInput.value}`)
     .then((response) => response.json())
     .then((data) => {
@@ -74,7 +76,7 @@ function paintShows() {
   }
   searchSection.innerHTML = codeHTML;
   listenCardShowsClicks();
-  createNextPrev();
 }
 
 searchBtn.addEventListener('click', getSearchedInfo);
+form.addEventListener('submit', getSearchedInfo);
