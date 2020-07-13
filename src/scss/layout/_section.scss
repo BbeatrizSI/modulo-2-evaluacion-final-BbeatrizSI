@@ -1,33 +1,66 @@
 .search-section {
   flex-grow: 0;
+  flex-shrink: 1;
   display: flex;
   flex-wrap: wrap;
   margin-left: 20px;
 
   .cardShow {
-    width: 260px;
+    width: 160px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    padding: 10px;
+    margin: 3px;
+    padding: 7px;
     border-radius: 5%;
     background-color: $color-primary-light;
     cursor: pointer;
 
+    @include tablet {
+      width: 210px;
+      height: 350px;
+      margin: 5px;
+      padding: 10px;
+    }
+    @include desktop {
+      width: 260px;
+      height: 410px;
+      margin: 5px;
+      padding: 10px;
+    }
+
     img {
-      height: 295px;
+      height: 190px;
       margin-top: 10px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+
+      @include tablet {
+        height: 260px;
+      }
+
+      @include desktop {
+        height: 295px;
+      }
     }
 
     h2 {
-      font-size: 20px;
-      margin: 15px 0 10px;
+      font-size: 16px;
+      margin: 10px 0 10px;
       color: $color-primary;
       text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
       font-weight: 700;
+
+      @include tablet {
+        font-size: 18px;
+        margin: 15px 0 10px;
+      }
+
+      @include desktop {
+        font-size: 20px;
+        margin: 15px 0 10px;
+      }
     }
   }
   .cardShow-selected {

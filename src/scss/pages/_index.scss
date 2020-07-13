@@ -6,23 +6,42 @@ body {
 
 .page {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: start;
   font-family: $font-main;
-}
+  padding: 5px;
 
-.main {
-  position: relative;
-  height: auto;
-  display: flex;
-  width: 100%;
-  flex-grow: 1;
+  @include tablet {
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 768px;
+    padding: 10px;
+  }
+  @include desktop {
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 1200px;
+  }
 
-  .container-left {
+  .main {
+    position: relative;
+    height: auto;
     display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    width: 268px;
+    width: 100%;
+    flex-grow: 1;
+
+    .container-left {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      width: 120px;
+
+      @include tablet {
+        width: 268px;
+      }
+    }
   }
 }
