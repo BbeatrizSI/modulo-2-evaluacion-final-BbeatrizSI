@@ -49,6 +49,8 @@ function paintFavoriteShows() {
 
   if (favoriteShows.length > 0 && containerDeleteAllBtn.innerHTML === '') {
     createDeleteBtn();
+  } else if (xDeleteFav.length === 0) {
+    containerDeleteAllBtn.innerHTML = '';
   }
 }
 

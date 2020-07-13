@@ -69,4 +69,20 @@
       color: $color-primary-light;
     }
   }
+
+  .paging {
+    margin: 10px auto;
+    i {
+      text-align: center;
+      margin: 5px;
+      color: $color-primary;
+      font-size: 26px;
+    }
+    .arrow {
+      cursor: pointer;
+      &:hover {
+        color: $color-delete;
+      }
+    }
+  }
 }

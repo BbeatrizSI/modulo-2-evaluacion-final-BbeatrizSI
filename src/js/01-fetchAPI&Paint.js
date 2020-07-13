@@ -74,6 +74,7 @@ function paintShows() {
   }
   searchSection.innerHTML = codeHTML;
   listenCardShowsClicks();
+  createNextPrev();
 }
 
 searchBtn.addEventListener('click', getSearchedInfo);

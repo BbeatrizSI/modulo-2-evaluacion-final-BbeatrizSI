@@ -19,7 +19,7 @@ function clearAllFavorites() {
   for (let i = 0; i < cardShows.length; i++) {
     cardShows[i].classList.remove('cardShow-selected');
   }
-  console.log('llego aquí');
+
   favoriteListSection.innerHTML = '';
   containerDeleteAllBtn.innerHTML = '';
   favoriteShows.splice(0, favoriteShows.length);
@@ -28,7 +28,7 @@ function clearAllFavorites() {
 
 // habilitar las "X" para que eliminen del array de favoritos y del LocalStorage una a una las series. También desaparecen del array y se le quita la clase de seleccionada.
 
-favCardShows = document.querySelectorAll('.js-favCardShow');
+// favCardShows = document.querySelectorAll('.js-favCardShow');
 
 function clearOneFav(ev) {
   const numberId = parseInt(ev.currentTarget.dataset.id);
