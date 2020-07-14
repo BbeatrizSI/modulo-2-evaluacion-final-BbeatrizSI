@@ -5,6 +5,7 @@
 // Selectores Botón, Input, Sección de búsqueda y Sección de favoritos. Variables para Shows encontrados y para favoritos.
 
 const searchBtn = document.querySelector('.js-search-button');
+const logBtnContainer = document.querySelector('.js-logBtnContainer');
 const searchInput = document.querySelector('.js-search-input');
 const favoriteListSection = document.querySelector('.js-favoriteShows-section');
 const searchSection = document.querySelector('.js-search-section');
@@ -12,6 +13,7 @@ const containerDeleteAllBtn = document.querySelector(
   '.js-deleteAllBtnContainer'
 );
 const form = document.querySelector('.js-form');
+let logBtn = '';
 
 let searchedShows = [];
 let favoriteShows = [];
@@ -45,6 +47,7 @@ function getSearchedInfo(ev) {
           idShow: searchedShows[i].show.id,
           imgShow: imgUrl,
           titleShow: searchedShows[i].show.name,
+          language: searchedShows[i].show.language,
         };
       }
       paintShows();
@@ -55,6 +58,7 @@ function getSearchedInfo(ev) {
 
 function paintShows() {
   let codeHTML = '';
+  const prefLanguages = ['English', 'Spanish', 'Portuguese'];
 
   for (let i = 0; i < shows.length; i++) {
     const numberId = shows[i].idShow;
@@ -62,15 +66,25 @@ function paintShows() {
       .map((show) => show.idShow)
       .indexOf(numberId);
 
+    let recomend = '';
+
+    if (prefLanguages.includes(shows[i].language)) {
+      recomend = `<i class="far fa-thumbs-up recomend" title="You undestand it!!"></i>`;
+    } else {
+      recomend = `<i class="fas fa-exclamation-triangle caution" title="Aware: language is ${shows[i].language}"></i>`;
+    }
+
     if (indexFavorite !== -1) {
       codeHTML += `<div class="cardShow js-cardShow cardShow-selected" data-id="${shows[i].idShow}">`;
       codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
       codeHTML += `<h2>${shows[i].titleShow}</h2>`;
+      codeHTML += `<span class="language-container"><i class="fas fa-language language" title="${shows[i].language}"></i>${recomend}</span>`;
       codeHTML += `</div>`;
     } else {
       codeHTML += `<div class="cardShow js-cardShow" data-id="${shows[i].idShow}">`;
       codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
       codeHTML += `<h2>${shows[i].titleShow}</h2>`;
+      codeHTML += `<span class="language-container"><i class="fas fa-language language" title="${shows[i].language}"></i>${recomend}</span>`;
       codeHTML += `</div>`;
     }
   }
