@@ -74,19 +74,17 @@ function paintShows() {
       recomend = `<i class="fas fa-exclamation-triangle caution" title="Aware: language is ${shows[i].language}"></i>`;
     }
 
+    let option = '';
+
     if (indexFavorite !== -1) {
-      codeHTML += `<div class="cardShow js-cardShow cardShow-selected" data-id="${shows[i].idShow}">`;
-      codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
-      codeHTML += `<h2>${shows[i].titleShow}</h2>`;
-      codeHTML += `<span class="language-container"><i class="fas fa-language language" title="${shows[i].language}"></i>${recomend}</span>`;
-      codeHTML += `</div>`;
-    } else {
-      codeHTML += `<div class="cardShow js-cardShow" data-id="${shows[i].idShow}">`;
-      codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
-      codeHTML += `<h2>${shows[i].titleShow}</h2>`;
-      codeHTML += `<span class="language-container"><i class="fas fa-language language" title="${shows[i].language}"></i>${recomend}</span>`;
-      codeHTML += `</div>`;
+      option = 'cardShow-selected';
     }
+
+    codeHTML += `<div class="cardShow js-cardShow ${option}" data-id="${shows[i].idShow}">`;
+    codeHTML += `<img src="${shows[i].imgShow}" alt="Portada de ${shows[i].titleShow}" />`;
+    codeHTML += `<h2>${shows[i].titleShow}</h2>`;
+    codeHTML += `<span class="language-container"><i class="fas fa-language language" title="${shows[i].language}"></i>${recomend}</span>`;
+    codeHTML += `</div>`;
   }
   searchSection.innerHTML = codeHTML;
   listenCardShowsClicks();

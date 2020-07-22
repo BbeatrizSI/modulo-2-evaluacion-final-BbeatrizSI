@@ -81,5 +81,5 @@ function createLogBtn() {
 }
 
 function countFavorites() {
-  console.log(`Tienes ${favoriteShows.length} series favoritas en tu lista.`);
+  alert(`Tienes ${favoriteShows.length} series favoritas en tu lista.`);
 }
