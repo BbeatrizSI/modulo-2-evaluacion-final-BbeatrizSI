@@ -3,14 +3,14 @@
   flex-shrink: 1;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 20px;
+  padding-left: 20px;
 
   .cardShow {
     width: 160px;
-    height: 250px;
+    height: 285px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 3px;
     padding: 7px;
@@ -20,7 +20,7 @@
 
     @include tablet {
       width: 210px;
-      height: 350px;
+      height: 360px;
       margin: 5px;
       padding: 10px;
     }
@@ -35,6 +35,7 @@
       height: 190px;
       margin-top: 10px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.32);
+      justify-self: flex-start;
 
       @include tablet {
         height: 260px;
@@ -47,7 +48,7 @@
 
     h2 {
       font-size: 16px;
-      margin: 10px 0 10px;
+      margin-top: 10px;
       color: $color-primary;
       text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
       font-weight: 700;
@@ -62,11 +63,45 @@
         margin: 15px 0 10px;
       }
     }
+    .language-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      justify-self: flex-end;
+      color: $color-primary;
+      margin-bottom: 8px;
+
+      @include tablet {
+        margin-bottom: 8px;
+      }
+
+      .language {
+        color: $color-primary;
+        font-size: 20px;
+        margin-left: 5px;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+      }
+      .recomend {
+        color: $color-recomend;
+        margin-right: 5px;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+      }
+      .caution {
+        color: $color-delete;
+        margin-right: 5px;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+      }
+    }
   }
   .cardShow-selected {
     background-color: $color-primary;
     h2 {
       color: $color-primary-light;
+    }
+    .language-container {
+      .language {
+        color: $color-primary-light;
+      }
     }
   }
 

@@ -5,8 +5,7 @@
 // crear botón de limpiar favoritos cuando la sección de favoritos tiene contenido y escucharlo.
 
 function createDeleteBtn() {
-  let codeHTML =
-    '<button id="delete-fav-button" class="delete-fav-button js-deleteAllFav" type="button">Clear</button>';
+  let codeHTML = `<button id="delete-fav-button" class="delete-fav-button js-deleteAllFav" type="button">Clear</button>`;
   containerDeleteAllBtn.innerHTML = codeHTML;
 
   const deleteAllBtn = document.querySelector('.js-deleteAllFav');
@@ -27,8 +26,6 @@ function clearAllFavorites() {
 }
 
 // habilitar las "X" para que eliminen del array de favoritos y del LocalStorage una a una las series. También desaparecen del array y se le quita la clase de seleccionada.
-
-// favCardShows = document.querySelectorAll('.js-favCardShow');
 
 function clearOneFav(ev) {
   const numberId = parseInt(ev.currentTarget.dataset.id);
