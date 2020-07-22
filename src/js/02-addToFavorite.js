@@ -77,10 +77,9 @@ function createLogBtn() {
   logBtnContainer.innerHTML = codeHTML;
 
   logBtn = document.querySelector('.js-favorite-button');
+  logBtn.addEventListener('click', countFavorites);
 }
 
 function countFavorites() {
   console.log(`Tienes ${favoriteShows.length} series favoritas en tu lista.`);
 }
-
-logBtn.addEventListener('click', countFavorites);
