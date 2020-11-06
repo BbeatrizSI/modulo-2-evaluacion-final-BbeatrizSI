@@ -30,7 +30,7 @@ getFromLocalStorage();
 
 function getSearchedInfo(ev) {
   ev.preventDefault();
-  fetch(`http://api.tvmaze.com/search/shows?q=${searchInput.value}`)
+  fetch(`https://api.tvmaze.com/search/shows?q=${searchInput.value}`)
     .then((response) => response.json())
     .then((data) => {
       searchedShows = data;
