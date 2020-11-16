@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 'use strict';
 
 /* PETICIÓN AL SERVIDOR Y PINTADO DE SHOWS */
